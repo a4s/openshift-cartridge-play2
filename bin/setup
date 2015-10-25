@@ -6,4 +6,4 @@ cd ${OPENSHIFT_DATA_DIR}
 curl http://downloads.typesafe.com/typesafe-activator/${activatorV}/typesafe-activator-${activatorV}-minimal.zip > activator.zip
 unzip activator.zip
 rm activator.zip
-ln -s ${OPENSHIFT_DATA_DIR}/activator-${activatorV} ${OPENSHIFT_DATA_DIR}/activator
+ln -s ${OPENSHIFT_DATA_DIR}/activator-${activatorV}-minimal ${OPENSHIFT_DATA_DIR}/activator
