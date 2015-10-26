@@ -29,7 +29,7 @@ function build {
     unset GIT_WORK_TREE
 
     cd ${OPENSHIFT_REPO_DIR}
-    ${OPENSHIFT_DATA_DIR}/activator/activator clean stage -java-home /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.51-1.b16.el6_7.i386 -Duser.home=${OPENSHIFT_DATA_DIR} -J-Xms128M -J-Xmx448m
+    #${OPENSHIFT_DATA_DIR}/activator/activator clean stage -java-home /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.51-1.b16.el6_7.i386 -Duser.home=${OPENSHIFT_DATA_DIR} -J-Xms128M -J-Xmx448m
 }
 
 function tidy {
