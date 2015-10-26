@@ -7,7 +7,8 @@ function start {
     [ -d target ] || build
     rm -f target/universal/stage/RUNNING_PID
     BIN_NAME=$(ls target/universal/stage/bin/ | head -n 1)
-    nohup target/universal/stage/bin/$BIN_NAME -java-home /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.51-1.b16.el6_7.i386 -Duser.home=${OPENSHIFT_DATA_DIR} -Dhttp.port=8080 -Dhttp.address=${OPENSHIFT_PLAY2_IP} -DapplyEvolutions.default=true -Dconfig.resource=openshift.conf -J-Xms128M -J-Xmx384m -J-server > $OPENSHIFT_PLAY2_LOG_DIR/play.log 2>&1 &
+    python http_server.py
+    #nohup target/universal/stage/bin/$BIN_NAME -java-home /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.51-1.b16.el6_7.i386 -Duser.home=${OPENSHIFT_DATA_DIR} -Dhttp.port=8080 -Dhttp.address=${OPENSHIFT_PLAY2_IP} -DapplyEvolutions.default=true -Dconfig.resource=openshift.conf -J-Xms128M -J-Xmx384m -J-server > $OPENSHIFT_PLAY2_LOG_DIR/play.log 2>&1 &
 }
 
 function stop {
@@ -28,7 +29,7 @@ function build {
     unset GIT_WORK_TREE
 
     cd ${OPENSHIFT_REPO_DIR}
-    ${OPENSHIFT_DATA_DIR}/activator/activator clean stage -java-home /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.51-1.b16.el6_7.i386 -Duser.home=${OPENSHIFT_DATA_DIR} -J-Xms128M -J-Xmx384m
+    #${OPENSHIFT_DATA_DIR}/activator/activator clean stage -java-home /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.51-1.b16.el6_7.i386 -Duser.home=${OPENSHIFT_DATA_DIR} -J-Xms128M -J-Xmx384m
 }
 
 function tidy {
