@@ -7,7 +7,7 @@ import socket
 # current directory.
 
 PORT = 8080
-local_hostname = os.getenv("OPENSHIFT_INTERNAL_IP")
+local_hostname = os.getenv("OPENSHIFT_PLAY2_IP")
 
 Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
 
